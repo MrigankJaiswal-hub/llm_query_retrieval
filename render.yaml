@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: llm-query-backend
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: APP_AUTH_TOKEN
+        value: 2c83d62bd7f13e929bcffb25b8861087ab3fd8ddd5f536df4721c4d455923695
+      - key: PINECONE_API_KEY
+        value: pcsk_49steB_9yjvy8jtDSgP4XryzZhyBhhg7BJwvW9gp6sfhoCma3qck7zyMWdUJmEq3YrHrLt
+      - key: PINECONE_ENVIRONMENT
+        value: us-east1-aws
+      - key: PINECONE_INDEX
+        value: llama-text-embed-v2-index-768
+      - key: GEMINI_API_KEY
+        value: AIzaSyB3j00pwzk4CAQTu7mIM2iLKMVmdEeLxG8
+      # add more keys if needed

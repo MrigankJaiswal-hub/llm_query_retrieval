@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+requests
+pydantic
+python-dotenv
+python-docx
+pdfminer.six
+pinecone>=3.0.0,<4.0.0
+tiktoken
+openai
+langchain
+pytest
+echo "python-multipart" 
+transformers
+sentence-transformers
+huggingface_hub

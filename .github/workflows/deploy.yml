@@ -1,0 +1,37 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code 
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: pytest
+
+      - name: Set up Railway CLI
+        run: |
+          curl -fsSL https://railway.app/install.sh | sh
+          export PATH=$HOME/.railway/bin:$PATH
+
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.1f51b7aa-a890-446b-855f-b59f02d25206 }}
+        run: |
+          railway up

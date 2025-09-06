@@ -10,7 +10,7 @@ tiktoken
 openai
 langchain
 pytest
-echo "python-multipart" 
+python-multipart
 transformers
 sentence-transformers
 huggingface_hub

@@ -66,29 +66,7 @@ GEMINI_API_KEY=your_key_here
 
 (Never commit .env to Git – use .gitignore)
 
-☁️ Deployment
-Railway
 
-Push repo to GitHub
-
-Go to Railway
- → Deploy from GitHub
-
-Add environment variables in Railway dashboard
-
-Set start command:
-
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-
-Your API will be live at:
-
-https://your-app.up.railway.app
-
-Vercel (Optional for Frontend)
-
-Frontend can be deployed separately on Vercel
-.
 
 🧪 Testing
 
@@ -107,3 +85,4 @@ pytest
   "clause_reference": "Section 3.2",
   "rationale": "Extracted from Coverage Terms section."
 }
+
